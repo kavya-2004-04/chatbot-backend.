@@ -112,6 +112,9 @@ app.post("/chat", async (req, res) => {
 });
 const PORT = process.env.PORT || 5000;
 // Start listening on the port
+app.get("/", (req, res) => {
+  res.send("✅ Chatbot Backend is running!");
+});
 const server = app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
   console.log("--> The terminal should now stay busy. If it quits, there is an error.");
