@@ -11,8 +11,8 @@ const app = express();
 // --- THIS IS THE DEFINITIVE FIX ---
 // This tells Express where to find ALL your static files (HTML, CSS, JS, images).
 // '..' means the folder one level UP from where server.js is.
-const rootDirectory = path.join(__dirname, '..');
-app.use(express.static(rootDirectory));
+//const rootDirectory = path.join(__dirname, '..');
+//app.use(express.static(rootDirectory));
 
 app.use(cors());
 app.use(express.json());
@@ -22,9 +22,9 @@ const { manualResponses, responseTemplates } = JSON.parse(fs.readFileSync(dataPa
 const { greeting, contextualResponses, fallbacks } = responseTemplates;
 
 // This route ensures that when someone visits your website's root, they get the index.html page.
-app.get('/', (req, res) => {
-    res.sendFile(path.join(rootDirectory, 'index.html'));
-});
+//app.get('/', (req, res) => {
+  //  res.sendFile(path.join(rootDirectory, 'index.html'));
+//});
 
 // ... The rest of your code for the chatbot's brain remains unchanged ...
 
